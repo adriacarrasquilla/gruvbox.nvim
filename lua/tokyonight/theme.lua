@@ -53,7 +53,7 @@ function M.setup()
     Substitute = { bg = c.red, fg = c.black }, -- |:substitute| replacement text highlighting
     LineNr = { fg = c.dark5 }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     CursorLineNr = { fg = c.fg_dark }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
-    MatchParen = { fg = c.orange, bold = true }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
+    MatchParen = { fg = c.orange, bg=util.darken(c.orange, 0.4), bold = true }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
     ModeMsg = { fg = c.fg_dark, bold = true }, -- 'showmode' message (e.g., "-- INSERT -- ")
     MsgArea = { fg = c.fg_dark }, -- Area for messages and cmdline
     -- MsgSeparator= { }, -- Separator for scrolled messages, `msgsep` flag of 'display'
@@ -68,7 +68,7 @@ function M.setup()
     PmenuSel = { bg = util.darken(c.fg_gutter, 0.8) }, -- Popup menu: selected item.
     PmenuSbar = { bg = util.lighten(c.bg_popup, 0.95) }, -- Popup menu: scrollbar.
     PmenuThumb = { bg = c.fg_gutter }, -- Popup menu: Thumb of the scrollbar.
-    Question = { fg = c.teal }, -- |hit-enter| prompt and yes/no questions
+    Question = { fg = c.cyan }, -- |hit-enter| prompt and yes/no questions
     QuickFixLine = { bg = c.bg_visual, bold = true }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
     Search = { bg = c.bg_search, fg = c.fg }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
     IncSearch = { bg = c.orange, fg = c.black }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
@@ -104,7 +104,7 @@ function M.setup()
     -- Float         = { }, --    a floating point constant: 2.3e10
 
     Identifier = { fg = c.blue, style = options.styles.variables }, -- (preferred) any variable name
-    Function = { fg = c.orange, style = options.styles.functions }, -- function name (also: methods for classes)
+    Function = { fg = c.green, style = options.styles.functions }, -- function name (also: methods for classes)
 
     Statement = { fg = c.red }, -- (preferred) any statement
     -- Conditional   = { }, --  if, then, else, endif, switch, etc.
@@ -120,12 +120,12 @@ function M.setup()
     -- Macro         = { }, --    same as Define
     -- PreCondit     = { }, --  preprocessor #if, #else, #endif, etc.
 
-    Type = { fg = c.orange }, -- (preferred) int, long, char, etc.
+    Type = { fg = c.yellow }, -- (preferred) int, long, char, etc.
     -- StorageClass  = { }, -- static, register, volatile, etc.
     -- Structure     = { }, --  struct, union, enum, etc.
     -- Typedef       = { }, --  A typedef
 
-    Special = { fg = c.yellow }, -- (preferred) any special symbol
+    Special = { fg = c.orange }, -- (preferred) any special symbol
     -- SpecialChar   = { }, --  special character in a constant
     -- Tag           = { }, --    you can use CTRL-] on this
     -- Delimiter     = { }, --  character that needs attention
@@ -152,13 +152,13 @@ function M.setup()
     -- mkdHeading = { fg = c.orange, bold = true },
     -- mkdCode = { bg = c.terminal_black, fg = c.fg },
     mkdCodeDelimiter = { bg = c.terminal_black, fg = c.fg },
-    mkdCodeStart = { fg = c.teal, bold = true },
-    mkdCodeEnd = { fg = c.teal, bold = true },
+    mkdCodeStart = { fg = c.cyan, bold = true },
+    mkdCodeEnd = { fg = c.cyan, bold = true },
     -- mkdLink = { fg = c.blue, underline = true },
 
     markdownHeadingDelimiter = { fg = c.orange, bold = true },
-    markdownCode = { fg = c.teal },
-    markdownCodeBlock = { fg = c.teal },
+    markdownCode = { fg = c.cyan2 },
+    markdownCodeBlock = { fg = c.cyan2 },
     markdownH1 = { fg = c.orange, bold = true },
     markdownH2 = { fg = c.blue, bold = true },
     markdownLinkText = { fg = c.blue, underline = true },
@@ -223,14 +223,14 @@ function M.setup()
     -- TSConstMacro        = { };    -- For constants that are defined by macros: `NULL` in C.
     -- TSError             = { };    -- For syntax/parser errors.
     -- TSException         = { };    -- For exception related keywords.
-    ["@field"] = { fg = c.green1 }, -- For fields.
+    ["@field"] = { fg = c.blue }, -- For fields.
     -- TSFloat             = { };    -- For floats.
     -- TSFunction          = { };    -- For function (calls and definitions).
     -- TSFuncBuiltin       = { };    -- For builtin functions: `table.insert` in Lua.
     -- TSFuncMacro         = { };    -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
     -- TSInclude           = { };    -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
     ["@keyword"] = { fg = c.red, style = options.styles.keywords }, -- For keywords that don't fall in previous categories.
-    ["@keyword.function"] = { fg = c.orange, style = options.styles.functions }, -- For keywords used to define a fuction.
+    ["@keyword.function"] = { fg = c.red, style = options.styles.functions }, -- For keywords used to define a fuction.
     ["@label"] = { fg = c.blue }, -- For labels: `label:` in C and `:label:` in Lua.
     -- TSMethod            = { };    -- For method calls and definitions.
     -- TSNamespace         = { };    -- For identifiers referring to modules and namespaces.
@@ -241,7 +241,7 @@ function M.setup()
     -- TSParameterReference= { };    -- For references to parameters of a function.
     ["@property"] = { fg = c.green1 }, -- Same as `TSField`.
     ["@punctuation.delimiter"] = { fg = c.orange }, -- For delimiters ie: `.`
-    ["@punctuation.bracket"] = { fg = c.fg_dark }, -- For brackets and parens.
+    ["@punctuation.bracket"] = { fg = c.orange }, -- For brackets and parens.
     ["@punctuation.special"] = { fg = c.orange }, -- For special punctutation that does not fall in the catagories before.
     -- TSRepeat            = { };    -- For keywords related to loops.
     -- TSString            = { };    -- For strings.
@@ -256,7 +256,7 @@ function M.setup()
     -- TSTag               = { };    -- Tags like html tag names.
     -- TSTagDelimiter      = { };    -- Tag delimiter like `<` `>` `/`
     -- TSText              = { };    -- For strings considered text in a markup language.
-    ["@text.reference"] = { fg = c.teal },
+    ["@text.reference"] = { fg = c.cyan },
     -- TSEmphasis          = { };    -- For text to be represented with emphasis.
     -- TSUnderline         = { };    -- For text to be represented with an underline.
     -- TSStrike            = { };    -- For strikethrough text.
@@ -273,7 +273,7 @@ function M.setup()
     rainbowcol1 = { fg = c.red },
     rainbowcol2 = { fg = c.yellow },
     rainbowcol3 = { fg = c.green },
-    rainbowcol4 = { fg = c.teal },
+    rainbowcol4 = { fg = c.cyan },
     rainbowcol5 = { fg = c.blue },
     rainbowcol6 = { fg = c.magenta },
     rainbowcol7 = { fg = c.purple },
@@ -317,7 +317,7 @@ function M.setup()
     NeotestTest = { fg = c.fg_sidebar },
     NeotestNamespace = { fg = c.green2 },
     NeotestFocused = { fg = c.yellow },
-    NeotestFile = { fg = c.teal },
+    NeotestFile = { fg = c.cyan },
     NeotestDir = { fg = c.blue },
     NeotestBorder = { fg = c.blue },
     NeotestIndent = { fg = c.fg_sidebar },
@@ -633,7 +633,7 @@ function M.setup()
     MiniStatuslineModeCommand = { fg = c.black, bg = c.yellow, bold = true },
     MiniStatuslineModeInsert = { fg = c.black, bg = c.green, bold = true },
     MiniStatuslineModeNormal = { fg = c.black, bg = c.blue, bold = true },
-    MiniStatuslineModeOther = { fg = c.black, bg = c.teal, bold = true },
+    MiniStatuslineModeOther = { fg = c.black, bg = c.cyan, bold = true },
     MiniStatuslineModeReplace = { fg = c.black, bg = c.red, bold = true },
     MiniStatuslineModeVisual = { fg = c.black, bg = c.magenta, bold = true },
 
