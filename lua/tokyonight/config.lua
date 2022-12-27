@@ -13,7 +13,8 @@ local defaults = {
     -- Value is any valid attr-list value for `:help nvim_set_hl`
     comments = { italic = true },
     keywords = { italic = true },
-    functions = {},
+    functions = { bold = true },
+    strings = { italic = true },
     variables = {},
     -- Background styles. Can be "dark", "transparent" or "normal"
     sidebars = "transparent", -- style for sidebars, see below

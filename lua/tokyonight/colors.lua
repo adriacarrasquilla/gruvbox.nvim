@@ -116,13 +116,13 @@ function M.setup(opts)
   colors.diff = {
     add = util.darken(colors.green2, 0.15),
     delete = util.darken(colors.red1, 0.15),
-    change = util.darken(colors.blue7, 0.15),
-    text = colors.blue7,
+    change = util.darken(colors.blue, 0.15),
+    text = colors.blue,
   }
 
   colors.git.ignore = colors.dark3
   colors.black = util.darken(colors.bg, 0.8, "#000000")
-  colors.border_highlight = util.darken(colors.blue1, 0.8)
+  colors.border_highlight = util.darken(colors.fg, 0.8)
   colors.border = colors.black
 
   -- Popups and statusline always get a dark background
@@ -139,15 +139,15 @@ function M.setup(opts)
     or config.options.styles.floats == "dark" and colors.bg_dark
     or colors.bg
 
-  colors.bg_visual = util.darken(colors.blue0, 0.7)
-  colors.bg_search = colors.blue0
+  colors.bg_visual = util.darken(colors.dark3, 0.7)
+  colors.bg_search = colors.orange
   colors.fg_sidebar = colors.fg_dark
   -- colors.fg_float = config.options.styles.floats == "dark" and colors.fg_dark or colors.fg
   colors.fg_float = colors.fg
 
   colors.error = colors.red1
   colors.warning = colors.yellow
-  colors.info = colors.blue2
+  colors.info = colors.blue
   colors.hint = colors.teal
 
   config.options.on_colors(colors)
