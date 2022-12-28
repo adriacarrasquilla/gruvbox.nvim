@@ -2,6 +2,7 @@ local util = require("gruvbox.util")
 local colors = require("gruvbox.colors")
 
 local M = {}
+
 --
 ---@class Highlight
 ---@field fg string|nil
@@ -28,7 +29,7 @@ function M.setup()
     Foo = { bg = c.magenta2, fg = c.magenta2 },
 
     Comment = { fg = c.comment, style = options.styles.comments }, -- any comment
-    ColorColumn = { bg = c.black }, -- used for the columns set with 'colorcolumn'
+    ColorColumn = { bg = c.bg_dark }, -- used for the columns set with 'colorcolumn'
     Conceal = { fg = c.dark5 }, -- placeholder characters substituted for concealed text (see 'conceallevel')
     Cursor = { fg = c.bg, bg = c.fg }, -- character under the cursor
     lCursor = { fg = c.bg, bg = c.fg }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
@@ -52,7 +53,7 @@ function M.setup()
     SignColumnSB = { bg = c.bg_sidebar, fg = c.bg }, -- column where |signs| are displayed
     Substitute = { bg = c.red, fg = c.black }, -- |:substitute| replacement text highlighting
     LineNr = { fg = c.dark5 }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
-    CursorLineNr = { fg = c.fg_dark }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
+    CursorLineNr = { fg = c.yellow }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
     MatchParen = { fg = c.orange, bg=util.darken(c.orange, 0.4), bold = true }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
     ModeMsg = { fg = c.fg_dark, bold = true }, -- 'showmode' message (e.g., "-- INSERT -- ")
     MsgArea = { fg = c.fg_dark }, -- Area for messages and cmdline
@@ -168,6 +169,7 @@ function M.setup()
     ["@text.todo.checked"] = { fg = c.green1 }, -- For brackets and parens.
     ["@text.literal.markdown_inline"] = { bg = c.terminal_black, fg = c.blue },
     ["@text.literal.markdown"] = { link = "Normal" },
+    ["@text.note"] = { link = "Comment" },
 
     debugPC = { bg = c.bg_sidebar }, -- used for highlighting the current line in terminal-debug
     debugBreakpoint = { bg = util.darken(c.info, 0.1), fg = c.info }, -- used for breakpoint colors in terminal-debug
@@ -405,7 +407,7 @@ function M.setup()
     LspFloatWinNormal = { bg = c.bg_float },
     LspFloatWinBorder = { fg = c.border_highlight },
     LspSagaBorderTitle = { fg = c.cyan },
-    LspSagaHoverBorder = { fg = c.blue },
+    LspSagaHoverBorder = { fg = c.border_highlight },
     LspSagaRenameBorder = { fg = c.green },
     LspSagaDefPreviewBorder = { fg = c.green },
     LspSagaCodeActionBorder = { fg = c.blue },
