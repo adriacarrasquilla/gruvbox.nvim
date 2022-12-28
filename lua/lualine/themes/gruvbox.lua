@@ -1,49 +1,49 @@
-local colors = require("tokyonight.colors").setup({ transform = true })
-local config = require("tokyonight.config").options
+local colors = require("gruvbox.colors").setup({ transform = true })
+local config = require("gruvbox.config").options
 
-local tokyonight = {}
+local gruvbox = {}
 
-tokyonight.normal = {
+gruvbox.normal = {
   a = { bg = colors.blue1, fg = colors.black, gui= "bold" },
   b = { bg = colors.terminal_black, fg = colors.blue1 },
   c = { bg = colors.bg_statusline, fg = colors.fg_sidebar },
 }
 
-tokyonight.insert = {
+gruvbox.insert = {
   a = { bg = colors.green, fg = colors.black , gui= "bold"},
   b = { bg = colors.terminal_black, fg = colors.green },
 }
 
-tokyonight.command = {
+gruvbox.command = {
   a = { bg = colors.yellow, fg = colors.black , gui= "bold"},
   b = { bg = colors.terminal_black, fg = colors.yellow1 },
 }
 
-tokyonight.visual = {
+gruvbox.visual = {
   a = { bg = colors.magenta, fg = colors.black, gui= "bold" },
   b = { bg = colors.terminal_black, fg = colors.magenta },
 }
 
-tokyonight.replace = {
+gruvbox.replace = {
   a = { bg = colors.red, fg = colors.black, gui= "bold" },
   b = { bg = colors.terminal_black, fg = colors.red },
 }
 
-tokyonight.terminal = {
+gruvbox.terminal = {
   a = {bg = colors.green1, fg = colors.black, gui= "bold" },
   b = {bg = colors.terminal_black, fg=colors.green1 },
 }
 
-tokyonight.inactive = {
+gruvbox.inactive = {
   a = { bg = colors.bg, fg = colors.blue, gui= "bold" },
   b = { bg = colors.bg, fg = colors.fg_gutter, gui = "bold" },
   c = { bg = colors.bg, fg = colors.fg_gutter },
 }
 
 if config.lualine_bold then
-  for _, mode in pairs(tokyonight) do
+  for _, mode in pairs(gruvbox) do
     mode.a.gui = "bold"
   end
 end
 
-return tokyonight
+return gruvbox
