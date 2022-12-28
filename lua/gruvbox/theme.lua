@@ -83,7 +83,7 @@ function M.setup()
     TabLine = { bg = c.bg_statusline, fg = c.fg_gutter }, -- tab pages line, not active tab page label
     TabLineFill = { bg = c.black }, -- tab pages line, where there are no labels
     TabLineSel = { fg = c.black, bg = c.orange }, -- tab pages line, active tab page label
-    Title = { fg = c.bg_dark, bold = true }, -- titles for output from ":set all", ":autocmd" etc.
+    Title = { fg = c.green1, bold = true }, -- titles for output from ":set all", ":autocmd" etc.
     Visual = { bg = c.bg_visual }, -- Visual mode selection
     VisualNOS = { bg = c.bg_visual }, -- Visual mode selection when vim is "Not Owning the Selection".
     WarningMsg = { fg = c.warning }, -- warning messages
