@@ -28,6 +28,7 @@ M.default = {
   magenta2 = "#8f3f71",
   purple = "#d3869b",
   orange = "#fe8019",
+  orange2 = "#af3a03",
   yellow = "#fabd2f",
   yellow1 = "#d79921",
   yellow3 = "#b57614",
@@ -37,11 +38,11 @@ M.default = {
   teal = "#427b58",
   red = "#fb4934",
   red1 = "#cc241d",
-  git = { change = "#d3869b", add = "#076678", delete = "#af3a03" },
+  git = { change = "#83a598", add = "#98971a", delete = "#fb4934" },
   gitSigns = {
-    add = "#076678",
-    change = "#d3869b",
-    delete = "#af3a03",
+    change = "#83a598",
+    add = "#98971a",
+    delete = "#fb4934",
   },
 }
 
@@ -117,8 +118,8 @@ function M.setup(opts)
   util.day_brightness = config.options.day_brightness
 
   colors.diff = {
-    add = util.darken(colors.green2, 0.15),
-    delete = util.darken(colors.red1, 0.15),
+    add = util.darken(colors.green1, 0.15),
+    delete = util.darken(colors.red, 0.15),
     change = util.darken(colors.blue, 0.15),
     text = colors.blue,
   }
@@ -148,7 +149,7 @@ function M.setup(opts)
   -- colors.fg_float = config.options.styles.floats == "dark" and colors.fg_dark or colors.fg
   colors.fg_float = colors.fg
 
-  colors.error = colors.red1
+  colors.error = colors.red
   colors.warning = colors.yellow
   colors.info = colors.blue
   colors.hint = colors.cyan
