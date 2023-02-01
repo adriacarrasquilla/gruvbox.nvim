@@ -138,6 +138,7 @@ function M.setup(opts)
   colors.bg_sidebar = config.options.styles.sidebars == "transparent" and colors.none
     or config.options.styles.sidebars == "dark" and colors.bg_dark
     or colors.bg
+  colors.bg_sidebar = colors.bg_dark
 
   colors.bg_float = config.options.styles.floats == "transparent" and colors.none
     or config.options.styles.floats == "dark" and colors.bg_dark
